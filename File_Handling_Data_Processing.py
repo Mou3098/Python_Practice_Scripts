@@ -2,18 +2,25 @@ import pandas as pd
 from datetime import datetime
 import os
 
-# path of csv files(Input & Output)
-directory = "D:/m/python/CSV_File_handling/"
-if not os.path.exists(directory):
-    os.makedirs(directory)  # Create the directory if it doesn't exist
+# Current working directory
+current_directory = os.getcwd()
+
+# Define input and output subdirectories
+input_subdirectory = os.path.join(current_directory, 'CSV_File_handling_input')
+output_subdirectory = os.path.join(current_directory, 'output_files')
+
+# Create output subdirectory if it doesn't exist
+if not os.path.exists(output_subdirectory):
+    os.makedirs(output_subdirectory)
 
 # File paths
-input_file_path = os.path.join(directory, "employees.csv")
-filtered_file_path = os.path.join(directory, "filtered_employees.csv")
-avg_salary_file_path = os.path.join(directory, "average_salary_all.csv")
-avg_salary_dept_file_path = os.path.join(directory, "average_salary_by_department.csv")
-date_conversion_file_path = os.path.join(directory, "date_conversion_employees.csv")
+input_file_path = os.path.join(input_subdirectory, 'employees.csv')
+filtered_file_path = os.path.join(output_subdirectory, 'filtered_employees.csv')
+avg_salary_file_path = os.path.join(output_subdirectory, 'average_salary_all.csv')
+avg_salary_dept_file_path = os.path.join(output_subdirectory, 'average_salary_by_department.csv')
+date_conversion_file_path = os.path.join(output_subdirectory, 'date_conversion_employees.csv')
 
+print(input_file_path)
 # Load CSV data
 df = pd.read_csv(input_file_path)
 
@@ -36,4 +43,4 @@ df['YearsWithCompany'] = ((datetime.now() - df['JoiningDate']).dt.days / 365.25)
 # Save date conversion results to CSV file
 df.to_csv(date_conversion_file_path, index=False)
 
-print(f"Processed data saved successfully in {directory}.")
+print(f"Processed data saved successfully in {output_subdirectory}.")
