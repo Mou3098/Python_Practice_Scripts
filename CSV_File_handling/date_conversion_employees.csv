@@ -1,0 +1,11 @@
+EmployeeID,Name,Department,Salary,JoiningDate,YearsWithCompany
+101,John Doe,Engineering,50000,2024-09-09,0.02
+102,Stuart Broad,Sales,60000,2023-09-02,1.04
+103,Jane Smith,Marketing,70000,2024-05-07,0.36
+104,Michale,Engineering,50000,2023-09-02,1.04
+105,James Bond,Sales,55000,2023-09-03,1.04
+106,Naruto,Sales,45000,2023-09-04,1.04
+107,Sakura,Marketing,30000,2023-09-05,1.03
+108,April Thomas,Engineering,75000,2023-09-06,1.03
+109,Virat Kohli,Sales,60000,2023-09-07,1.03
+110,Sachin Tendulkar,Engineering,29000,2023-09-08,1.03
